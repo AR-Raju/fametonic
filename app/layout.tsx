@@ -10,7 +10,7 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Glassy Card UI",
+  title: "Fametonic",
   description: "Modern glassy card UI component",
 };
 
