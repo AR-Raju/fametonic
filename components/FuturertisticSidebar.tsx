@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/lib/utils";
 
 interface FuturisticSidebarProps {
@@ -25,7 +24,7 @@ export function FuturisticSidebar({ isOpen, onClose }: FuturisticSidebarProps) {
       {/* Sidebar */}
       <div
         className={cn(
-          "fixed top-32 right-4 transform w-80 z-50 transition-all duration-300 ease-in-out",
+          "fixed top-40 right-4 transform w-80 z-50 transition-all duration-300 ease-in-out",
           isOpen
             ? "translate-x-0 opacity-100 scale-100"
             : "translate-x-full opacity-0 scale-95"

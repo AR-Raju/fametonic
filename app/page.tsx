@@ -1,9 +1,9 @@
-import GlassyHeroCard from "@/components/glassy-hero-card";
+import GlassyHeroCard from "@/components/HeroCard";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black flex flex-col">
+    <div>
       <GlassyHeroCard />
-    </main>
+    </div>
   );
 }
