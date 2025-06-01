@@ -1,13 +1,9 @@
+import Navbar from "@/components/Navbar";
+import TopGradientBar from "@/components/TopGradientBar";
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
 import type React from "react";
+import { figtree, urbanist } from "./fonts";
 import "./globals.css";
-
-const urbanist = Urbanist({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Fametonic",
@@ -21,7 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={urbanist.className}>{children}</body>
+      <body
+        className={`${urbanist.variable} ${figtree.variable} font-sans bg-black relative min-h-screen`}
+      >
+        <TopGradientBar />
+        <Navbar />
+        <main className="pb-8">{children}</main>
+      </body>
     </html>
   );
 }
