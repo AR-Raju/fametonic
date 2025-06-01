@@ -50,88 +50,100 @@ export default function GlassyHeroCard() {
             </span>
           </div>
 
-          <div className="container mx-auto max-w-7xl pt-10 sm:pt-14">
+          <div className="container mx-auto max-w-7xl pt-10 sm:pt-14 relative">
             {/* Logo and Navbar */}
             <Navbar />
 
-            {/* Grid Section */}
-            <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 sm:gap-1 items-center">
-              {/* Left Content */}
-              <div className="space-y-6 sm:space-y-8 flex flex-col justify-center">
-                {/* Headings */}
-                <div className="space-y-2">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                    Want to Turn Social Media Into a Profitable Career?
-                  </h1>
-                  <h2
-                    className="text-2xl sm:text-3xl md:text-4xl text-[#00E7F9] mt-1 font-semibold"
-                    style={{
-                      textShadow: "2px 2px 0 #FC004E, 4px 4px 10px #FC004E",
-                    }}
-                  >
-                    Discover your way to success with Fametonic:
-                  </h2>
-                </div>
+            {/* Image for Mobile (on top of text) */}
+            <div className="block lg:hidden relative w-full h-64 mb-6">
+              <Image
+                src="/mobile.svg"
+                alt="Mobile"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
 
-                {/* Feature List */}
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 group animate-in slide-in-from-left-5 duration-700"
-                      style={{ animationDelay: `${index * 150}ms` }}
+            <div className="lg:max-h-screen">
+              {/* Grid Section */}
+              <div className="relative lg:grid lg:grid-cols-12 items-center">
+                {/* Background Image on Right Side */}
+                <div
+                  className="hidden animate-in slide-in-from-right-10 duration-1000 delay-300 lg:block lg:col-start-5 lg:col-end-13 absolute inset-0 h-full bg-contain bg-center bg-no-repeat z-0"
+                  style={{
+                    backgroundImage: "url('/mobile.svg')",
+                  }}
+                ></div>
+
+                {/* Left Content Overlaid */}
+                <div className="lg:col-start-1 lg:col-end-7 sm:z-10 space-y-6 sm:space-y-8 flex flex-col justify-center">
+                  {/* Headings */}
+                  <div className="space-y-2">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                      Want to Turn Social Media Into a Profitable Career?
+                    </h1>
+                    <h2
+                      className="text-2xl sm:text-3xl md:text-4xl text-[#00E7F9] mt-1 font-semibold"
+                      style={{
+                        textShadow: "2px 2px 0 #FC004E, 4px 4px 10px #FC004E",
+                      }}
                     >
-                      <feature.icon />
-                      <span className="text-white text-sm sm:text-base leading-relaxed">
-                        {feature.text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                      Discover your way to success with Fametonic:
+                    </h2>
+                  </div>
 
-                {/* Terms For Mobile*/}
-                <div className="block sm:hidden pt-4 space-y-1">
-                  <p className="text-xs text-center sm:text-sm text-white/60">
-                    By clicking "Get Started", you agree with Terms and
-                    Conditions, Privacy Policy, Subscription Terms.
-                  </p>
-                  <p className="text-xs text-center text-white/60">
-                    Fametonic 2025 ©All Rights Reserved.
-                  </p>
-                </div>
+                  {/* Feature List */}
+                  <div className="space-y-4">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center space-x-3 group animate-in slide-in-from-left-5 duration-700"
+                        style={{ animationDelay: `${index * 150}ms` }}
+                      >
+                        <feature.icon />
+                        <span className="text-white text-sm sm:text-base leading-relaxed">
+                          {feature.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
-                {/* CTA Button */}
-                <Button
-                  className="w-full sm:w-fit"
-                  rightIcon={
-                    <Image
-                      src="/arrow-right.svg"
-                      height={8}
-                      width={8}
-                      alt="arrow-right"
-                    />
-                  }
-                />
+                  {/* Terms For Mobile */}
+                  <div className="block sm:hidden pt-4 space-y-1">
+                    <p className="text-xs text-center sm:text-sm text-white/60">
+                      By clicking "Get Started", you agree with Terms and
+                      Conditions, Privacy Policy, Subscription Terms.
+                    </p>
+                    <p className="text-xs text-center text-white/60">
+                      Fametonic 2025 ©All Rights Reserved.
+                    </p>
+                  </div>
 
-                {/* Terms */}
-                <div className="hidden sm:block pt-4 space-y-1">
-                  <p className="text-xs sm:text-sm text-white/60">
-                    By clicking "Get Started", you agree with Terms and
-                    Conditions, Privacy Policy, Subscription Terms.
-                  </p>
-                  <p className="text-xs text-white/60">
-                    Fametonic 2025 ©All Rights Reserved.
-                  </p>
+                  {/* CTA Button */}
+                  <Button
+                    rightIcon={
+                      <Image
+                        src="/arrow-right.svg"
+                        height={8}
+                        width={8}
+                        alt="arrow-right"
+                      />
+                    }
+                  />
+
+                  {/* Terms for Desktop */}
+                  <div className="hidden sm:block pt-4 space-y-1">
+                    <p className="text-xs sm:text-sm text-white/60">
+                      By clicking "Get Started", you agree with Terms and
+                      Conditions, Privacy Policy, Subscription Terms.
+                    </p>
+                    <p className="text-xs text-white/60">
+                      Fametonic 2025 ©All Rights Reserved.
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              {/* Right Image with Background */}
-              <div
-                className="relative lg:flex hidden items-center justify-center h-full bg-cover bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: "url('/mobile.svg')",
-                }}
-              ></div>
             </div>
           </div>
         </div>

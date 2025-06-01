@@ -1,7 +1,9 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { FuturisticSidebar } from "./futurertistic-sidebar";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,7 +36,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="md:hidden flex items-center justify-between w-full">
+      <nav className="md:hidden flex items-center justify-between w-full relative z-50">
         <Image
           src="/logo.png"
           alt="Fametonic Logo"
@@ -43,40 +45,18 @@ export default function Navbar() {
           className="w-28 object-contain"
         />
         <button
-          onClick={() => setIsMobileMenuOpen(true)}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           className="text-white p-2"
         >
-          <Image src="/hamburg.svg" alt="Menu" width={24} height={24} />
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-6 right-6 text-white text-2xl"
-            >
-              ×
-            </button>
-            <a
-              href="#"
-              className="text-white text-2xl hover:text-[#00E7F9] transition-colors duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About us
-            </a>
-            <a
-              href="#"
-              className="text-white text-2xl hover:text-[#00E7F9] transition-colors duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      )}
+      {/* Futuristic Sidebar */}
+      <FuturisticSidebar
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
     </>
   );
 }
