@@ -1,16 +1,9 @@
-"use client";
-
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
-import { FuturisticSidebar } from "./FuturertisticSidebar";
 
 export default function NavbarClient() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
     <>
-      <nav className="md:hidden container max-w-7xl relative flex items-center w-full mt-24 h-16 px-4 z-50">
+      <nav className="md:hidden container max-w-7xl relative flex items-center w-full mt-24 h-16 px-3 z-50">
         {/* Centered Logo */}
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <Image
@@ -23,19 +16,22 @@ export default function NavbarClient() {
         </div>
 
         {/* Hamburger Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="ml-auto text-white p-2"
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        <button className="ml-auto text-white p-2">
+          <Image
+            src="/hamburger.svg"
+            alt="Menu"
+            width={24}
+            height={24}
+            className="w-6 h-6 object-contain"
+            style={{
+              filter: "drop-shadow(2px 2px 10px rgba(0, 231, 249, 0.5))",
+            }}
+            priority
+            loading="eager"
+            draggable="false"
+          />
         </button>
       </nav>
-
-      {/* Sidebar Toggle */}
-      <FuturisticSidebar
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-      />
     </>
   );
 }

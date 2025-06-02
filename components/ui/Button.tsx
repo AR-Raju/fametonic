@@ -23,7 +23,7 @@ const Button = ({
             text-[20px] leading-[100%] 
             tracking-normal align-middle
   inline-flex items-center justify-center
-  w-full sm:w-[300px]
+  w-full md:w-[300px]
    h-[40px]
   px-10 py-2
   bg-[#FC004E] 
@@ -46,7 +46,7 @@ const Button = ({
           </span>
         )}
       </button>
-      <p className="font-figtree font-normal text-[12px] leading-[16px] tracking-normal text-center align-middle sm:w-[280px]">
+      <p className="font-figtree font-normal text-[12px] leading-[16px] tracking-normal text-center align-middle md:w-[280px]">
         1-minute quiz for personalized Insights
       </p>
     </div>

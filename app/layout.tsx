@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <TopGradientBar />
         <Navbar />
-        <main className="pb-8">{children}</main>
+        <main className="pb-10">{children}</main>
       </body>
     </html>
   );
