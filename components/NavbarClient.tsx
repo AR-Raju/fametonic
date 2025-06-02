@@ -20,9 +20,9 @@ export default function NavbarClient() {
           <Image
             src="/hamburger.svg"
             alt="Menu"
-            width={24}
-            height={24}
-            className="w-6 h-6 object-contain"
+            width={20}
+            height={12}
+            className="w-5 h-3 object-contain"
             style={{
               filter: "drop-shadow(2px 2px 10px rgba(0, 231, 249, 0.5))",
             }}

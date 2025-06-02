@@ -24,16 +24,16 @@ export default function GlassyHeroCard() {
           {/* Hero Section */}
           <div className="md:max-h-screen">
             <div
-              className="relative  md:min-h-[600px] 
+              className="relative  md:min-h-[679px]
           md-none 
           md:bg-[url('/mobile.svg')] 
           md:bg-no-repeat 
           md:bg-[position:right_center]
           lg:bg-[position:80%_center] 
-          bg-black"
+          bg-black flex items-center"
             >
-              <div className="relative z-10 px-5 md:px-12 max-w-7xl mx-auto">
-                <div className="md:max-w-lg flex flex-col justify-center gap-[22px] md:gap-[16px]">
+              <div className="relative z-10 px-5 md:px-12 max-w-7xl mx-auto w-full">
+                <div className="md:max-w-lg flex flex-col justify-center items-center gap-[22px] md:gap-[16px]">
                   <div className="text-center md:text-left">
                     <h1 className="font-urbanist font-extrabold text-[25px] md:text-[35px] text-white">
                       Want to Turn Social Media Into a Profitable Career?
@@ -66,7 +66,7 @@ export default function GlassyHeroCard() {
                     />
 
                     {/* Terms */}
-                    <div className="text-center md:text-left">
+                    <div className="text-center px-[10px] md:px-0 md:text-left">
                       <p className="font-figtree text-[12px] text-[#ABABAB] mb-[19px] lg:mb-[12px]">
                         By clicking "Get Started", you agree with Terms and
                         Conditions, Privacy Policy, Subscription Terms.
