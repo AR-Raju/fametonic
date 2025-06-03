@@ -4,11 +4,11 @@ Fametonic is a modern, responsive web UI project built with Next.js 13 App Route
 
 ## Live Demo
 
-[Live Site](https://fametonic-xl4k.vercel.app/)
+[Live Site]([https://fametonic-xl4k.vercel.app/](https://fametonic-xl4k.vercel.app/))
 
 ## Video Walkthrough
 
-[Watch Demo on YouTube](https://youtu.be/your-demo-link) (replace with actual video link)
+[Watch Demo on YouTube]([https://youtu.be/your-demo-link](https://www.youtube.com/watch?v=Q8JVYTPngso))
 
 ## Features
 
@@ -121,6 +121,3 @@ These are imported and configured in fonts.ts and applied in layout.tsx.
 
 Your Name — https://github.com/AR-Raju
 
-## License
-
-MIT License. Feel free to use and adapt.
